@@ -384,9 +384,9 @@ def G_style(
 def G_mapping(
     latents_in,                             # First input: Latent vectors (Z) [minibatch, latent_size].
     labels_in,                              # Second input: Conditioning labels [minibatch, label_size].
-    latent_size             = 512,          # Latent vector (Z) dimensionality.
+    latent_size             = 16,          # Latent vector (Z) dimensionality.
     label_size              = 0,            # Label dimensionality, 0 if no labels.
-    dlatent_size            = 512,          # Disentangled latent (W) dimensionality.
+    dlatent_size            = 16,          # Disentangled latent (W) dimensionality.
     dlatent_broadcast       = None,         # Output disentangled latent (W) as [minibatch, dlatent_size] or [minibatch, dlatent_broadcast, dlatent_size].
     mapping_layers          = 8,            # Number of mapping layers.
     mapping_fmaps           = 512,          # Number of activations in the mapping layers.
@@ -439,9 +439,9 @@ def G_mapping(
 
 def G_synthesis(
     dlatents_in,                        # Input: Disentangled latents (W) [minibatch, num_layers, dlatent_size].
-    dlatent_size        = 512,          # Disentangled latent (W) dimensionality.
+    dlatent_size        = 16,          # Disentangled latent (W) dimensionality.
     num_channels        = 3,            # Number of output color channels.
-    resolution          = 1024,         # Output resolution.
+    resolution          = 64,         # Output resolution.
     fmap_base           = 8192,         # Overall multiplier for the number of feature maps.
     fmap_decay          = 1.0,          # log2 feature map reduction when doubling the resolution.
     fmap_max            = 512,          # Maximum number of feature maps in any layer.
